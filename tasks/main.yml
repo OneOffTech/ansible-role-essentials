@@ -1,0 +1,40 @@
+---
+# Some of the tasks below use 'raw', as more abstracted tasks such as 'apt'
+# or 'shell' require python to be already installed. This can not be
+# guaranteed at this point, so we will use raw until we installed all the
+# necessary stuff.
+
+# first update the apt cache.
+- name: "repositories are up to date"
+  raw: "apt-get update"
+  changed_when: False
+
+# install all requirements for ansible
+- name: "python is installed"
+  raw: "apt-get --yes install python python-apt python-pycurl"
+  changed_when: False
+
+# ----- below this line, everything is allowed :) -----
+
+    ## 'safe upgrades' = no incompatible version jumps
+    #- name: "software is upgraded"
+    #  apt: "upgrade=yes"
+
+- name: "essential software is installed"
+  apt: "pkg={{item}} state=installed"
+  with_items:
+    - curl
+    - git
+    - htop
+    - iftop
+    - iotop
+    - net-tools
+    - screen
+    - sed
+    - sudo
+    - tmux
+    - tree
+    - vim-nox
+    - wget
+    - zsh
+
