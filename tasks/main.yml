@@ -16,25 +16,32 @@
 
 # ----- below this line, everything is allowed :) -----
 
-    ## 'safe upgrades' = no incompatible version jumps
-    #- name: "software is upgraded"
-    #  apt: "upgrade=yes"
+  ## 'safe upgrades' = no incompatible version jumps
+  #- name: "software is upgraded"
+  #  apt: "upgrade=yes"
 
-- name: "essential software is installed"
+- name: "Install essential software"
   apt: "pkg={{item}} state=installed"
   with_items:
+    - apt-transport-https
+    - ca-certificates
     - curl
     - git
     - htop
     - iftop
     - iotop
+    - locate
+    - nano
+    - ncdu
     - net-tools
+    - geoip-bin
+    - python-pip
+    - python3
+    - python3-pip
+    - rsync
     - screen
     - sed
     - sudo
     - tmux
     - tree
-    - vim-nox
     - wget
-    - zsh
-
