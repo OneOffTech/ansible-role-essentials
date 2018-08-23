@@ -21,11 +21,12 @@
   #  apt: "upgrade=yes"
 
 - name: "Install essential software"
-  apt: "pkg={{item}} state=installed"
+  apt: name={{ item }} state=latest
   with_items:
     - apt-transport-https
     - ca-certificates
     - curl
+    - dnsutils
     - git
     - htop
     - iftop
@@ -45,3 +46,5 @@
     - tmux
     - tree
     - wget
+    - whois
+
