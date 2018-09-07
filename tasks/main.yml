@@ -22,29 +22,4 @@
 
 - name: "Install essential software"
   apt: name={{ item }} state=latest
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - dnsutils
-    - git
-    - htop
-    - iftop
-    - iotop
-    - locate
-    - nano
-    - ncdu
-    - net-tools
-    - geoip-bin
-    - python-pip
-    - python3
-    - python3-pip
-    - rsync
-    - screen
-    - sed
-    - sudo
-    - tmux
-    - tree
-    - wget
-    - whois
-
+  with_items: "{{ essential_packets }}"

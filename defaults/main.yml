@@ -1,2 +1,30 @@
 ---
 # defaults file for ansible-role-essentials
+
+essential_packets:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - dnsutils
+  - geoip-bin
+  - git
+  - htop
+  - iftop
+  - iotop
+  - locate
+  - nano
+  - ncdu
+  - net-tools
+  - python-pip
+  - python3
+  - python3-pip
+  - rsync
+  - screen
+  - sed
+  - sudo
+  - tmux
+  - tree
+  - vim-nox
+  - wget
+  - whois
+  - zsh
